@@ -1,11 +1,13 @@
 #!/usr/bin/python3
+from math import ceil, sqrt
 from sys import argv, stderr, exit
 
 
 def factorize(n):
 	p, q = 1, n
 	i = 2
-	while i <= (n/2):
+	d = ceil(sqrt(n))
+	while i <= d:
 		if n % i == 0:
 			p, q = i, int(n / i)
 			break
