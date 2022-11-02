@@ -2,16 +2,13 @@
 from math import ceil, sqrt
 from sys import argv, stderr, exit
 
-
 def factorize(n):
 	p, q = 1, n
-	i = 2
-	d = ceil(sqrt(n))
-	while i <= d:
+	d = ceil(sqrt(n)) + 1
+	for i in range(2, d):
 		if n % i == 0:
 			p, q = i, int(n / i)
 			break
-		i += 1
 	return (p, q)
 
 def main():
